@@ -7,8 +7,8 @@
   --bg-elevated: #0a1e3a;
   --text-primary: #D5E2F2;
   --text-secondary: #8ea4c0;
-  --accent: #e0f49f;
-  --accent-dim: #c8e7ad;
+  --accent: #0095FE;
+  --accent-dim: #2CCA61;
   --rose: #d2425c;
   --rose-dim: #892a3c;
   --gradient-dark: linear-gradient(135deg, #010101, #00152A, #010101);
@@ -451,9 +451,9 @@ img {
 }
 
 .hero-cover {
-  max-width: 340px;
+  max-width: 280px;
   border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(204, 219, 244, .12), 0 0 80px rgba(199, 92, 111, .06);
+  /* box-shadow: 0 20px 60px rgba(204, 219, 244, .12), 0 0 80px rgba(199, 92, 111, .06); */
   animation: coverFloat 4s ease-in-out infinite;
   justify-self: center
 }
