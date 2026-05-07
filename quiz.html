@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Quiz - How Exposed Are You? | Digital Privacy is a Myth*</title>
+  <meta name="description" content="Test your digital privacy knowledge with 5 questions. Get your privacy persona and shareable scorecard. No tracking, of course.">
+  <meta property="og:title" content="How Exposed Are You? — Privacy Quiz">
+  <meta property="og:description" content="5 questions. Real answers. No tracking. Test your digital privacy IQ.">
+  <meta property="og:image" content="digital_privacy_is_a_myth_cover.png">
+  <meta property="og:url" content="privacymyth.himanshujangra.in/quiz.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://privacymyth.himanshujangra.in/quiz.html">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="page-loader"><div class="lock-icon"><div class="lock-shackle"></div><div class="lock-body"></div></div><p class="loader-text">Initializing secure connection...</p><div class="loader-progress"><div class="loader-progress-bar"></div></div><p class="loader-percent">0%</p></div>
+
+  <nav class="navbar"><div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><span>Digital Privacy</span> is a Myth*</a>
+    <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="read.html">Read</a></li>
+      <li><a href="quiz.html" class="active">Quiz</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </div></nav>
+
+  <section style="padding-top:6rem;min-height:80vh;display:flex;align-items:center">
+    <div class="container quiz-container">
+
+      <!-- LANDING -->
+      <div id="quiz-landing" style="text-align:center">
+        <p class="section-label" style="justify-content:center">Privacy Quiz</p>
+        <h1 style="margin-bottom:.5rem">How Exposed <span style="color:var(--accent)">Are You?</span></h1>
+        <p style="color:var(--text-secondary);margin-bottom:2.5rem" class="mono">5 questions. Real answers. No tracking.</p>
+        <button class="btn btn-primary" onclick="startQuiz()" id="start-quiz-btn">🔒 Start Quiz</button>
+      </div>
+
+      <!-- QUESTION -->
+      <div id="quiz-question" style="display:none">
+        <div class="quiz-progress"><div class="quiz-progress-dot"></div><div class="quiz-progress-dot"></div><div class="quiz-progress-dot"></div><div class="quiz-progress-dot"></div><div class="quiz-progress-dot"></div></div>
+        <p id="q-counter" class="mono" style="color:var(--text-secondary);font-size:.85rem;margin-bottom:1rem"></p>
+        <h2 id="q-text" style="font-size:clamp(1.2rem,3vw,1.6rem);text-transform:none;font-family:'Hind Madurai',sans-serif;font-weight:600;margin-bottom:1.5rem;line-height:1.5"></h2>
+        <div id="q-options"></div>
+        <div id="q-explanation" class="quiz-explanation" style="display:none"><p id="q-explanation-text" style="color:var(--text-secondary);font-size:.9rem"></p></div>
+        <button id="q-next" class="btn btn-primary" style="display:none;margin-top:1.5rem" onclick="nextQuestion()">Next Question →</button>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="quiz-result" style="display:none" class="quiz-result">
+        <p class="section-label" style="justify-content:center">Your Result</p>
+        <div id="result-emoji" class="quiz-persona"></div>
+        <h2 id="result-name" style="margin-bottom:.25rem"></h2>
+        <p id="result-score" class="quiz-score"></p>
+        <p id="result-verdict" class="quiz-verdict"></p>
+
+        <div class="scorecard-wrapper"><canvas id="scorecard"></canvas></div>
+
+        <div class="share-buttons">
+          <button class="btn btn-primary" onclick="saveScoreCard()">💾 Save Image</button>
+          <button class="btn btn-secondary" id="share-btn" onclick="shareScoreCard()">📤 Share</button>
+        </div>
+
+        <div class="cta-banner" style="margin-top:2rem">
+          <p style="font-style:italic">Want to understand every answer? Read the book, it's free.</p>
+          <a href="download.html" class="btn btn-primary">Download PDF</a>
+        </div>
+
+        <button class="btn btn-ghost" onclick="retakeQuiz()" style="margin-top:1rem">↻ Retake Quiz</button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><div class="footer-inner"><div class="footer-brand"><h3>Digital Privacy is a Myth*</h3><p>By Himanshu Jangra</p></div><div class="footer-links"><a href="index.html">Home</a><a href="read.html">Read</a><a href="quiz.html">Quiz</a><a href="feedback.html">Feedback</a><a href="privacy.html">Privacy Policy</a></div></div><div class="footer-bottom">© 2026 Himanshu Jangra. All rights reserved.<span class="zero-track">Made with zero tracking.</span></div></div></footer>
+  <div id="cookie-banner"><span>🔒 Zero cookies. Zero tracking. Your data stays yours.</span><button id="cookie-dismiss" class="btn btn-primary btn-sm">Got it</button></div>
+
+  <script src="shared.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
