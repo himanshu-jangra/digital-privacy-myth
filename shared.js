@@ -4,7 +4,7 @@
    ============================================= */
 
 // Google Apps Script endpoint — replace with your deployed URL
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwmV4aIXFLLBpcHf0Eg7M_i3OXawRpc7naEX6KyrK7eoikwOM8mPIP0Se2gBNFowTJ60w/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyX_iC8OXYWzOJQPhC_uAyRWYuwdHmohGj4TFR7z48GdYPiWj8z3QqEOKgAUnER4WfO/exec';
 
 /* ---------- Loader ---------- */
 function initLoader() {

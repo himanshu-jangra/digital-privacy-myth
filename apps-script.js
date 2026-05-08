@@ -3,7 +3,7 @@
 // ============================================
 // INSTRUCTIONS:
 // 1. Open Google Sheets and create a new spreadsheet
-// 2. Create 4 tabs: "readers", "waitlist", "feedback", "_config"
+// 2. Create 5 tabs: "readers", "waitlist", "feedback", "download_log", "_config"
 // 3. Go to Extensions > Apps Script
 // 4. Paste this entire file into the script editor
 // 5. Deploy > New deployment > Web app
@@ -35,6 +35,12 @@ function doPost(e) {
       var tab = sheet.getSheetByName('feedback');
       if (!tab) { tab = sheet.insertSheet('feedback'); tab.appendRow(['timestamp','name','email','phone','rating','feedback_text','recommend','source']); }
       tab.appendRow([timestamp, data.name || '', data.email || '', data.phone || '', data.rating || '', data.feedback_text || '', data.recommend, data.source || 'feedback_page']);
+    }
+
+    if (type === 'download_log') {
+      var tab = sheet.getSheetByName('download_log');
+      if (!tab) { tab = sheet.insertSheet('download_log'); tab.appendRow(['timestamp','method','source']); }
+      tab.appendRow([timestamp, data.method || 'unknown', data.source || 'download_page']);
     }
 
     return ContentService.createTextOutput(JSON.stringify({ status: 'ok' })).setMimeType(ContentService.MimeType.JSON);

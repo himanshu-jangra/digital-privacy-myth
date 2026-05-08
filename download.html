@@ -97,6 +97,8 @@
       if (data.waitlist_opt_in && data.email) {
         await submitToSheet('waitlist', { email: data.email, source: 'download_waitlist' });
       }
+      // Log the download count
+      await submitToSheet('download_log', { method: 'form', source: 'download_page' });
       restore('✓ Downloading!');
       triggerDownload();
       setTimeout(() => {
@@ -105,8 +107,10 @@
       }, 600);
     });
 
-    document.getElementById('skip-form').addEventListener('click', (e) => {
+    document.getElementById('skip-form').addEventListener('click', async (e) => {
       e.preventDefault();
+      // Log the download count even when skipping form
+      submitToSheet('download_log', { method: 'skip', source: 'download_page' });
       triggerDownload();
       document.getElementById('download-form').style.display = 'none';
       document.getElementById('download-success').classList.add('show');
